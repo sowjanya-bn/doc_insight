@@ -1,9 +1,28 @@
+# Python cache
 __pycache__/
 *.py[cod]
-*.egg-info/
+
+# Virtual environments
 .venv/
-.env
+.docins/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# MacOS
 .DS_Store
-.streamlit/
+
+# Jupyter
 .ipynb_checkpoints/
-.idea
+
+# Streamlit
+.streamlit/
+
+# Local environment variables
+.env
+
+# Logs
+*.log
+.idea/
