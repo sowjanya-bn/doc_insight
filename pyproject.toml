@@ -1,0 +1,20 @@
+[project]
+name = "docinsight"
+version = "0.1.0"
+description = "A schema-driven document intelligence pipeline for extracting structured insights from semi-structured documents."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2.0",
+    "streamlit>=1.44.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["docinsight"]
+
+[tool.setuptools.package-data]
+docinsight = ["py.typed"]
