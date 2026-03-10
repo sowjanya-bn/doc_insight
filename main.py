@@ -1,19 +1,23 @@
 from pprint import pprint
 
-from docinsight.pipeline import run_sustainability_pipeline
+from docinsight.batch import run_batch_pipeline
+from docinsight.reporting import build_kpi_dataframe
+from docinsight.exporters import save_json
 
 
 def main() -> None:
-    result = run_sustainability_pipeline("data/samples/energy_bill.txt")
+    results = run_batch_pipeline("data/samples")
 
-    print("=== EXTRACTED FIELDS ===")
-    pprint(result["extracted"])
+    print("=== FIRST DOCUMENT RESULT ===")
+    pprint(results[0]["normalized"])
+    pprint(results[0]["kpis"])
 
-    print("\n=== NORMALIZED FIELDS ===")
-    pprint(result["normalized"])
+    df = build_kpi_dataframe(results)
 
-    print("\n=== COMPUTED KPIS ===")
-    pprint(result["kpis"])
+    print("\n=== KPI DATAFRAME ===")
+    print(df.to_string(index=False))
+
+    save_json(results, "outputs/pipeline_results.json")
 
 
 if __name__ == "__main__":

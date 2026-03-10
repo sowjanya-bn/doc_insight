@@ -1,0 +1,9 @@
+Supplier: British Gas
+Site: Bowring Park Golf Course
+Billing Period: February 2026
+
+Electricity Consumption: 3980 kWh
+Water Usage: 16 m3
+Waste Collected: 105 kg
+
+Total Cost: £590.20
